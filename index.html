@@ -1295,11 +1295,23 @@
       }
 
       .names-heading {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0px !important;
+        line-height: 1.2 !important;
         font-size: 32px;
       }
 
       .names-heading .ampersand {
-        font-size: 40px;
+        display: block !important;
+        font-size: 36px !important;
+        line-height: 1 !important;
+        margin: 2px 0 !important;
+      }
+
+      .names-heading span {
+        white-space: nowrap !important;
       }
 
       .wedding-subtitle {
@@ -1349,7 +1361,24 @@
       }
 
       .family-couple-names {
-        font-size: clamp(24px, 6vw, 32px);
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0px !important;
+        line-height: 1.2 !important;
+        font-size: clamp(26px, 6.8vw, 34px) !important;
+        margin-bottom: 18px !important;
+      }
+
+      .family-couple-names .family-amp {
+        display: block !important;
+        font-size: 28px !important;
+        line-height: 1 !important;
+        margin: 2px 0 !important;
+      }
+
+      .family-couple-names span {
+        white-space: nowrap !important;
       }
 
       .family-grid {
