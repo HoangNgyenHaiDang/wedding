@@ -235,6 +235,15 @@
       max-width: 95vw;
     }
 
+    body.has-modal .floating-bar {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: translateX(-50%) translateY(-20px) !important;
+    }
+
+    .desktop-gravity-txt { display: inline; }
+    .mobile-gravity-txt { display: none; }
+
     .btn-gravity {
       display: inline-flex;
       align-items: center;
@@ -1230,10 +1239,59 @@
     /* ==========================================================================
        12. RESPONSIVE BREAKPOINTS (Mobile & Desktop)
        ========================================================================== */
+    /* Media Queries tối ưu toàn diện cho Di Động (Mobile, Smartphone, Tablet) */
     @media (max-width: 768px) {
       .invitation-wrapper {
-        padding: 80px 14px 60px 14px;
-        gap: 24px;
+        padding: 70px 12px 60px 12px;
+        gap: 22px;
+      }
+
+      /* Floating top bar */
+      .floating-bar {
+        top: 10px !important;
+        padding: 4px 8px !important;
+        gap: 6px !important;
+        max-width: calc(100vw - 16px) !important;
+        box-sizing: border-box !important;
+      }
+
+      .btn-reopen-env {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+        flex-shrink: 0 !important;
+      }
+
+      .btn-gravity {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+        flex-shrink: 1 !important;
+      }
+
+      .desktop-gravity-txt {
+        display: none !important;
+      }
+
+      .mobile-gravity-txt {
+        display: inline !important;
+      }
+
+      .btn-music {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        flex-shrink: 0 !important;
+        font-size: 14px !important;
+      }
+
+      /* Hero Section */
+      .save-the-date {
+        font-size: 12px;
+        letter-spacing: 4px;
+        gap: 10px;
+      }
+
+      .save-the-date::before, .save-the-date::after {
+        width: 25px;
       }
 
       .names-heading {
@@ -1241,27 +1299,146 @@
       }
 
       .names-heading .ampersand {
-        font-size: 42px;
+        font-size: 40px;
       }
 
       .wedding-subtitle {
         font-size: 24px;
+        margin-bottom: 18px;
+      }
+
+      .hero-photo-wrap {
+        margin-bottom: 20px;
       }
 
       .hero-photo {
-        height: 260px;
+        height: 250px;
       }
 
+      .hero-date-badge {
+        gap: 12px;
+        padding: 8px 16px;
+      }
+
+      .hero-date-item .num {
+        font-size: 20px;
+      }
+
+      .countdown-box {
+        gap: 6px;
+        padding: 0 4px;
+        margin-top: 22px;
+      }
+
+      .countdown-item {
+        padding: 10px 4px;
+      }
+
+      .countdown-num {
+        font-size: clamp(16px, 4.8vw, 20px);
+      }
+
+      .countdown-txt {
+        font-size: 9.5px;
+        letter-spacing: 0.5px;
+      }
+
+      /* Family Section */
+      .family-event-title {
+        font-size: clamp(20px, 5.5vw, 26px);
+      }
+
+      .family-couple-names {
+        font-size: clamp(24px, 6vw, 32px);
+      }
+
+      .family-grid {
+        display: grid !important;
+        grid-template-columns: 1fr auto 1fr !important;
+        gap: 8px !important;
+        padding: 0 2px !important;
+        align-items: start !important;
+      }
+
+      .family-header-badge {
+        font-size: 12.5px !important;
+        padding: 4px 8px !important;
+        margin-bottom: 6px !important;
+      }
+
+      .family-parent-item {
+        font-size: 12.5px !important;
+        line-height: 1.4 !important;
+      }
+
+      .family-address {
+        font-size: 11px !important;
+        line-height: 1.35 !important;
+      }
+
+      /* Couple Section: Xếp dọc tinh tế, cân đối hoàn hảo trên di động */
       .card-couple {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 18px !important;
+        padding: 28px 16px !important;
+      }
+
+      .card-couple .person-box {
+        width: 100% !important;
+        max-width: 320px !important;
+        box-sizing: border-box !important;
+      }
+
+      .card-couple .person-avatar-wrap {
+        width: 135px !important;
+        height: 135px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .card-couple .person-role {
+        font-size: 24px !important;
+      }
+
+      .card-couple .person-name {
+        font-size: 21px !important;
+      }
+
+      .card-couple .person-desc {
+        font-size: 13px !important;
+        max-width: 280px !important;
       }
 
       .couple-heart-divider {
-        flex-direction: row;
-        gap: 12px;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        padding: 4px 0 !important;
+        margin: 0 !important;
       }
 
+      .couple-heart-divider i {
+        font-size: 22px !important;
+      }
+
+      /* Thứ tự hiển thị cô dâu - chú rể trên di động */
+      .card-couple.bride-first .box-bride { order: 1 !important; grid-column: 1 !important; }
+      .card-couple.bride-first .couple-heart-divider { order: 2 !important; grid-column: 1 !important; }
+      .card-couple.bride-first .box-groom { order: 3 !important; grid-column: 1 !important; }
+
+      .card-couple:not(.bride-first) .box-groom { order: 1 !important; grid-column: 1 !important; }
+      .card-couple:not(.bride-first) .couple-heart-divider { order: 2 !important; grid-column: 1 !important; }
+      .card-couple:not(.bride-first) .box-bride { order: 3 !important; grid-column: 1 !important; }
+
+      /* Video Section */
+      .card-video {
+        padding: 22px 14px;
+      }
+
+      /* Gallery Grid */
       .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
@@ -1271,26 +1448,107 @@
         height: 140px;
       }
 
-      .hero-date-badge {
-        gap: 12px;
-        padding: 8px 18px;
+      /* Event Venue */
+      .card-venue {
+        padding: 28px 16px;
       }
 
-      .hero-date-item .num {
-        font-size: 20px;
+      .event-details-box {
+        padding: 18px 12px;
+        margin: 18px auto;
       }
 
-      .countdown-box {
-        gap: 8px;
+      .event-action-buttons {
+        flex-direction: column !important;
+        gap: 10px !important;
       }
 
-      .countdown-num {
-        font-size: 18px;
+      .btn-action {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 12px 16px !important;
+        font-size: 14px !important;
       }
 
-      .btn-gravity {
-        font-size: 12px;
-        padding: 8px 14px;
+      /* Gift & RSVP */
+      .card-gift {
+        padding: 28px 16px;
+      }
+
+      .gift-tabs {
+        flex-direction: row !important;
+        gap: 8px !important;
+      }
+
+      .gift-tab-btn {
+        flex: 1 !important;
+        padding: 9px 8px !important;
+        font-size: 12px !important;
+        white-space: normal !important;
+        text-align: center !important;
+        line-height: 1.3 !important;
+      }
+
+      .qr-img {
+        max-width: 190px !important;
+        height: auto !important;
+      }
+
+      /* Modals */
+      .lightbox-modal {
+        z-index: 100000 !important;
+        background: rgba(0, 0, 0, 0.96) !important;
+      }
+
+      .lightbox-close {
+        top: 14px !important;
+        right: 14px !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(255, 255, 255, 0.22) !important;
+        border-radius: 50% !important;
+        font-size: 32px !important;
+        backdrop-filter: blur(6px) !important;
+      }
+
+      .qr-modal {
+        z-index: 100000 !important;
+      }
+
+      .qr-modal-content {
+        padding: 30px 16px 20px 16px !important;
+        max-width: calc(100vw - 28px) !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+      }
+
+      .qr-modal-close {
+        top: 10px !important;
+        right: 12px !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(0, 0, 0, 0.06) !important;
+        border-radius: 50% !important;
+        font-size: 24px !important;
+      }
+
+      /* Physics Panel */
+      .physics-panel {
+        bottom: 12px !important;
+        padding: 8px 12px !important;
+        border-radius: 20px !important;
+        gap: 8px !important;
+        font-size: 11.5px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
       }
     }
 
@@ -1298,11 +1556,72 @@
       .hero-photo {
         height: 210px;
       }
+
       .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
       }
+
       .gallery-img-wrap {
-        height: 220px;
+        height: 230px;
+      }
+
+      .names-heading {
+        font-size: 28px;
+      }
+
+      .names-heading .ampersand {
+        font-size: 34px;
+      }
+
+      .wedding-subtitle {
+        font-size: 21px;
+      }
+
+      .physics-card {
+        padding: 24px 14px;
+      }
+
+      .hero-date-badge {
+        gap: 8px;
+        padding: 6px 12px;
+      }
+
+      .hero-date-item .num {
+        font-size: 18px;
+      }
+
+      .hero-date-item .label {
+        font-size: 10px;
+      }
+
+      .countdown-box {
+        gap: 4px;
+      }
+
+      .countdown-item {
+        padding: 8px 2px;
+      }
+
+      .countdown-num {
+        font-size: 15px;
+      }
+
+      .countdown-txt {
+        font-size: 8px;
+        letter-spacing: 0px;
+      }
+
+      .family-grid {
+        gap: 6px !important;
+      }
+
+      .family-parent-item {
+        font-size: 11.5px !important;
+      }
+
+      .family-address {
+        font-size: 10px !important;
       }
     }
 
@@ -1364,27 +1683,28 @@
       animation: fadeInDown 0.8s ease;
     }
     .env-inv-title {
-      font-size: 13px;
-      letter-spacing: 4px;
+      font-size: clamp(10px, 3.2vw, 13px);
+      letter-spacing: clamp(2px, 0.8vw, 4px);
       color: #8b1e2d;
       font-weight: 600;
       text-transform: uppercase;
       display: block;
       margin-bottom: 4px;
+      white-space: nowrap;
     }
     .env-main-title {
       font-family: var(--font-title);
-      font-size: 28px;
+      font-size: clamp(20px, 5.5vw, 28px);
       font-weight: 700;
       color: #4a1018;
-      letter-spacing: 2px;
+      letter-spacing: clamp(1px, 0.4vw, 2px);
     }
 
     .envelope-wrapper {
       position: relative;
-      width: 380px;
-      max-width: 90vw;
-      height: 250px;
+      width: min(380px, 92vw);
+      max-width: 92vw;
+      height: clamp(210px, 56vw, 250px);
       perspective: 1200px;
       margin: 0 auto;
       filter: drop-shadow(0 25px 35px rgba(100, 20, 30, 0.25));
@@ -1795,32 +2115,34 @@
     }
 
     /* ==========================================================================
-       THỨ TỰ HIỂN THỊ NHÀ TRAI - NHÀ GÁI / CÔ DÂU - CHÚ RỂ THEO NGÀY LỄ
+       THỨ TỰ HIỂN THỊ NHÀ TRAI - NHÀ GÁI / CÔ DÂU - CHÚ RỂ THEO NGÀY LỄ (DESKTOP)
        ========================================================================== */
-    .family-grid.bride-first .family-bride {
-      order: 1;
-      grid-column: 1;
-    }
-    .family-grid.bride-first .family-divider-line {
-      order: 2;
-      grid-column: 2;
-    }
-    .family-grid.bride-first .family-groom {
-      order: 3;
-      grid-column: 3;
-    }
+    @media (min-width: 769px) {
+      .family-grid.bride-first .family-bride {
+        order: 1;
+        grid-column: 1;
+      }
+      .family-grid.bride-first .family-divider-line {
+        order: 2;
+        grid-column: 2;
+      }
+      .family-grid.bride-first .family-groom {
+        order: 3;
+        grid-column: 3;
+      }
 
-    .card-couple.bride-first .box-bride {
-      order: 1;
-      grid-column: 1;
-    }
-    .card-couple.bride-first .couple-heart-divider {
-      order: 2;
-      grid-column: 2;
-    }
-    .card-couple.bride-first .box-groom {
-      order: 3;
-      grid-column: 3;
+      .card-couple.bride-first .box-bride {
+        order: 1;
+        grid-column: 1;
+      }
+      .card-couple.bride-first .couple-heart-divider {
+        order: 2;
+        grid-column: 2;
+      }
+      .card-couple.bride-first .box-groom {
+        order: 3;
+        grid-column: 3;
+      }
     }
 </style>
 </head>
@@ -1828,7 +2150,7 @@
   <!-- OVERLAY PHONG BÌ THƯ HOÀNG GIA (CINEMATIC 3D ENVELOPE) -->
   <div id="envelope-overlay" class="envelope-overlay">
     <div class="envelope-top-bar">
-      <span class="env-inv-title">W E D D I N G &nbsp; I N V I T A T I O N</span>
+      <span class="env-inv-title">WEDDING INVITATION</span>
       <div class="env-main-title" id="env-event-title">THIỆP MỜI CƯỚI</div>
     </div>
     
@@ -1887,7 +2209,7 @@
     <!-- Nút kích hoạt trọng lực Google Gravity -->
     <button id="btn-gravity-toggle" class="btn-gravity" title="Biến tất cả các thẻ thành các khối vật lý nảy và rơi!">
       <i class="fa-solid fa-wand-magic-sparkles"></i>
-      <span id="gravity-btn-text">Kích hoạt rơi tự do (Anti-Gravity)</span>
+      <span id="gravity-btn-text"><span class="desktop-gravity-txt">Kích hoạt rơi tự do (Anti-Gravity)</span><span class="mobile-gravity-txt">Rơi tự do</span></span>
     </button>
 
     <!-- Nút trở về thiệp chuẩn -->
@@ -2744,9 +3066,11 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
       if (isGravityActive) return;
       if (tab) updateGiftBankView(tab);
       qrModal.classList.add('active');
+      document.body.classList.add('has-modal');
     }
     function closeQrModal() {
       qrModal.classList.remove('active');
+      document.body.classList.remove('has-modal');
     }
 
     const btnOpenQrPopup = document.getElementById('btn-open-qr-popup');
@@ -2925,12 +3249,17 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
       if (isGravityActive) return;
       lightboxImg.src = url;
       lightboxModal.classList.add('active');
+      document.body.classList.add('has-modal');
     }
     document.getElementById('lightbox-close').addEventListener('click', () => {
       lightboxModal.classList.remove('active');
+      document.body.classList.remove('has-modal');
     });
     lightboxModal.addEventListener('click', (e) => {
-      if (e.target === lightboxModal) lightboxModal.classList.remove('active');
+      if (e.target === lightboxModal) {
+        lightboxModal.classList.remove('active');
+        document.body.classList.remove('has-modal');
+      }
     });
 
     /* Hiệu ứng cánh hoa bay lãng mạn trên Canvas */
