@@ -1,6 +1,6 @@
-# Thiệp Cưới Online: Hoàng Đăng & Thảo Nguyên 💍
+# Thiep Cuoi Online: Hoang Dang & Thao Nguyen
 
-Trang web thiệp cưới online chính thức được tạo và đồng bộ tự động từ công cụ **Sửa Thiệp Mời**.
+Trang thiep cuoi online duoc tao va dong bo tu dong tu Cong cu Sua Thiep Moi.
 
-- 🌐 **Xem thiệp cưới online:** [https://hoangngyenhaidang.github.io/wedding/](https://hoangngyenhaidang.github.io/wedding/)
-- 🕒 **Cập nhật lần cuối:** 21:16:36 06/10/2026
+- Link xem online: https://hoangngyenhaidang.github.io/wedding/
+- Cap nhat lan cuoi: 14:02:20 9/10/2026

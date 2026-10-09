@@ -1,4 +1,5 @@
 *.zip
 *.bak
 *.mov
+# Cho phep video cuoi online:
 !Wedding_Recap_Highlights.mp4
