@@ -1,4 +1,4 @@
-*.mp4
-*.mov
 *.zip
 *.bak
+*.mov
+!Wedding_Recap_Highlights.mp4
