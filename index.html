@@ -4997,7 +4997,7 @@
         <!-- Khung Thời Gian Lễ Cưới & Tiệc Mừng Đồng Bộ Trùng Khớp -->
         <div class="wedding-timeline-box">
           <div class="timeline-step">
-            <div class="timeline-badge-icon"><i class="fa-solid fa-house-chimney-heart"></i></div>
+            <div class="timeline-badge-icon"><i class="fa-solid fa-house"></i></div>
             <div class="timeline-info">
               <span class="timeline-tag">HÔN LỄ TẠI TƯ GIA</span>
               <div class="timeline-time" id="timeline-ceremony-time">14:30</div>
@@ -5171,7 +5171,7 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
         <!-- Hai mốc thời gian trùng khớp: Lễ tại nhà 14h30 & Ăn tiệc 17h00 -->
         <div class="venue-dual-schedule">
           <div class="venue-schedule-item">
-            <div class="venue-item-badge"><i class="fa-solid fa-house-chimney-heart"></i> Hôn Lễ Tại Tư Gia</div>
+            <div class="venue-item-badge"><i class="fa-solid fa-house"></i> Hôn Lễ Tại Tư Gia</div>
             <div class="venue-item-time" id="venue-ceremony-time">14:30</div>
             <div class="venue-item-desc">Mời khách đến nhà tham dự lễ</div>
             <div class="venue-item-loc">Tư gia Nhà Trai: Khối Phúc Lợi, Vinh Lộc, Nghệ An</div>
@@ -6130,13 +6130,9 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
       if (cLunarText) {
 
-        const lStr = (WEDDING_CONFIG.weddingLunarDate || '').trim();
-
-        if (lStr.startsWith('(') && lStr.endsWith(')')) cLunarText.textContent = lStr;
-
-        else if (lStr.toLowerCase().startsWith('tức')) cLunarText.textContent = `(${lStr})`;
-
-        else cLunarText.textContent = `(Tức ${lStr})`;
+        let lStr = (WEDDING_CONFIG.weddingLunarDate || '').trim();
+        lStr = lStr.replace(/^\(?tức\s*/i, '').replace(/\(?âm\s*lịch\)?/i, '').replace(/[\(\)]/g, '').trim();
+        cLunarText.textContent = `(Tức ${lStr.charAt(0).toLowerCase() + lStr.slice(1)} - Âm lịch)`;
 
       }
 
@@ -6192,7 +6188,12 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
       document.getElementById('venue-date').textContent = WEDDING_CONFIG.weddingDate;
 
-      document.getElementById('venue-lunar').textContent = `(Tức ${WEDDING_CONFIG.weddingLunarDate})`;
+      const vlEl = document.getElementById('venue-lunar');
+      if (vlEl) {
+        let lStr = (WEDDING_CONFIG.weddingLunarDate || '').trim();
+        lStr = lStr.replace(/^\(?tức\s*/i, '').replace(/\(?âm\s*lịch\)?/i, '').replace(/[\(\)]/g, '').trim();
+        vlEl.textContent = `(Tức ${lStr.charAt(0).toLowerCase() + lStr.slice(1)} - Âm lịch)`;
+      }
 
       document.getElementById('venue-location').textContent = WEDDING_CONFIG.weddingLocation;
       const vLocMini = document.getElementById('venue-location-mini');
