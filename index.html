@@ -4194,6 +4194,192 @@
 
 
 
+    /* Khung Lịch Trình Lễ Cưới & Tiệc Mừng */
+    .countdown-subnote {
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold-secondary);
+      letter-spacing: 0.5px;
+      text-align: center;
+      background: rgba(254, 248, 231, 0.7);
+      border: 1px dashed var(--gold-primary);
+      border-radius: 20px;
+      padding: 6px 16px;
+      display: inline-block;
+    }
+
+    .wedding-timeline-box {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 22px auto 26px auto;
+      max-width: 580px;
+    }
+
+    .timeline-step {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 16px;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-step:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+    }
+
+    .timeline-step.highlight {
+      background: linear-gradient(135deg, rgba(254, 248, 231, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+      border-color: var(--gold-primary);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .timeline-badge-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 10px rgba(170, 124, 17, 0.25);
+    }
+
+    .timeline-info {
+      width: 100%;
+    }
+
+    .timeline-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--gold-secondary);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .timeline-time {
+      font-family: var(--font-title);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .timeline-step.highlight .timeline-time {
+      color: #b91c1c;
+    }
+
+    .timeline-desc {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .timeline-loc {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Venue Dual Schedule */
+    .venue-dual-schedule {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .venue-schedule-item {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(212, 175, 55, 0.32);
+      border-radius: 14px;
+      padding: 14px 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .venue-schedule-item.highlight {
+      background: rgba(254, 248, 231, 0.95);
+      border-color: var(--gold-primary);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+    }
+
+    .venue-item-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gold-secondary);
+      margin-bottom: 4px;
+    }
+
+    .venue-item-badge.highlight {
+      color: #b91c1c;
+    }
+
+    .venue-item-time {
+      font-family: var(--font-title);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .venue-schedule-item.highlight .venue-item-time {
+      color: #b91c1c;
+      font-size: 30px;
+    }
+
+    .venue-item-desc {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .venue-item-loc {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .venue-schedule-divider {
+      width: 1px;
+      background: rgba(212, 175, 55, 0.35);
+      align-self: stretch;
+    }
+
+    @media (max-width: 600px) {
+      .wedding-timeline-box {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .venue-dual-schedule {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .venue-schedule-divider {
+        display: none;
+      }
+    }
+
     /* Thư Mời Lời Ngỏ (Invitation Letter Box) */
 
     .invitation-letter-box {
@@ -4706,6 +4892,10 @@
 
       </div>
 
+      <div class="countdown-subnote">
+        <i class="fa-regular fa-clock"></i> Hôn Lễ Tại Tư Gia: <b>14h30</b> • Ăn Tiệc: <b>17h00</b> | <b>28/11/2026</b>
+      </div>
+
     </section>
 
 
@@ -4772,9 +4962,9 @@
 
       <div class="ceremony-box">
 
-        <div class="ceremony-title" id="ceremony-heading">TIỆC MỪNG LỄ THÀNH HÔN</div>
+        <div class="ceremony-title" id="ceremony-heading">LỄ THÀNH HÔN - NHÀ TRAI</div>
 
-        <div class="ceremony-time" id="ceremony-time-text">VÀO LÚC 17:00 THỨ BẢY</div>
+        <div class="ceremony-time" id="ceremony-time-text">VÀO LÚC 14:30 & 17:00 THỨ BẢY</div>
 
         
 
@@ -4784,11 +4974,11 @@
 
             <span class="cal-label">THÁNG</span>
 
-            <span class="cal-val" id="cal-month">10</span>
+            <span class="cal-val" id="cal-month">11</span>
 
           </div>
 
-          <div class="cal-day-big" id="cal-day-big">31</div>
+          <div class="cal-day-big" id="cal-day-big">28</div>
 
           <div class="cal-year-wrap">
 
@@ -4802,7 +4992,29 @@
 
         
 
-        <div class="ceremony-lunar" id="ceremony-lunar-text">(Tức ngày 22 tháng 09 năm Bính Ngọ)</div>
+        <div class="ceremony-lunar" id="ceremony-lunar-text">(Tức ngày 20 tháng 10 năm Bính Ngọ - Âm lịch)</div>
+
+        <!-- Khung Thời Gian Lễ Cưới & Tiệc Mừng Đồng Bộ Trùng Khớp -->
+        <div class="wedding-timeline-box">
+          <div class="timeline-step">
+            <div class="timeline-badge-icon"><i class="fa-solid fa-house-chimney-heart"></i></div>
+            <div class="timeline-info">
+              <span class="timeline-tag">HÔN LỄ TẠI TƯ GIA</span>
+              <div class="timeline-time" id="timeline-ceremony-time">14:30</div>
+              <div class="timeline-desc">Mời khách đến nhà tham dự lễ</div>
+              <div class="timeline-loc"><i class="fa-solid fa-location-dot"></i> Tư gia Nhà Trai</div>
+            </div>
+          </div>
+          <div class="timeline-step highlight">
+            <div class="timeline-badge-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+            <div class="timeline-info">
+              <span class="timeline-tag">TIỆC MỪNG TÂN HÔN</span>
+              <div class="timeline-time" id="timeline-feast-time">17:00</div>
+              <div class="timeline-desc">Mời khách ăn tiệc chung vui</div>
+              <div class="timeline-loc"><i class="fa-solid fa-location-dot"></i> Nhà Văn Hóa Khối Phúc Lợi</div>
+            </div>
+          </div>
+        </div>
 
       </div>
 
@@ -4946,7 +5158,7 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
         <i class="fa-solid fa-champagne-glasses"></i>
 
-        Tiệc Cưới Thân Mật
+        Lễ Thành Hôn & Tiệc Cưới Thân Mật
 
       </h2>
 
@@ -4956,7 +5168,22 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
       <div class="event-details-box">
 
-        <div class="event-time-highlight" id="venue-time">17:00</div>
+        <!-- Hai mốc thời gian trùng khớp: Lễ tại nhà 14h30 & Ăn tiệc 17h00 -->
+        <div class="venue-dual-schedule">
+          <div class="venue-schedule-item">
+            <div class="venue-item-badge"><i class="fa-solid fa-house-chimney-heart"></i> Hôn Lễ Tại Tư Gia</div>
+            <div class="venue-item-time" id="venue-ceremony-time">14:30</div>
+            <div class="venue-item-desc">Mời khách đến nhà tham dự lễ</div>
+            <div class="venue-item-loc">Tư gia Nhà Trai: Khối Phúc Lợi, Vinh Lộc, Nghệ An</div>
+          </div>
+          <div class="venue-schedule-divider"></div>
+          <div class="venue-schedule-item highlight">
+            <div class="venue-item-badge highlight"><i class="fa-solid fa-champagne-glasses"></i> Mời Khách Ăn Tiệc</div>
+            <div class="venue-item-time" id="venue-time">17:00</div>
+            <div class="venue-item-desc">Khai tiệc mừng thân mật</div>
+            <div class="venue-item-loc"><span id="venue-location-mini">Nhà Văn Hóa, Khối Phúc Lợi</span></div>
+          </div>
+        </div>
 
         <div class="event-date-highlight" id="venue-date">Thứ Bảy, ngày 28 tháng 11 năm 2026</div>
 
@@ -5311,14 +5538,19 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
   "brideName": "Thảo Nguyên",
   "brideTitle": "Cô Dâu",
   "brideDesc": "Cô gái dịu dàng, thông minh và tràn đầy năng lượng tích cực bên cạnh người bạn đời.",
+  "ceremonyTime": "14:30",
+  "ceremonyDesc": "Mời khách đến nhà tham dự lễ",
+  "ceremonyLocation": "Tư gia Nhà Trai: Khối Phúc Lợi, Vinh Lộc, Nghệ An",
   "weddingTime": "17:00",
+  "feastTime": "17:00",
+  "feastDesc": "Mời khách ăn tiệc",
   "weddingDate": "Thứ Bảy, ngày 28 tháng 11 năm 2026",
   "weddingDateShort": "28/11/2026",
-  "weddingLunarDate": "Ngày 22 tháng 09 năm Bính Ngọ (Âm lịch)",
+  "weddingLunarDate": "Ngày 20 tháng 10 năm Bính Ngọ (Âm lịch)",
   "weddingLocation": "Nhà Văn Hóa, Khối Phúc Lợi",
-  "weddingAddressDetails": "Khối Phúc Lợi,  Phường Vinh Lộc,  tỉnh Nghệ An",
+  "weddingAddressDetails": "Khối Phúc Lợi, Phường Vinh Lộc, tỉnh Nghệ An",
   "mapsUrl": "https://maps.app.goo.gl/vShXXGHscUaUDuL36?g_st=ic",
-  "countdownTargetDate": "2026-11-28T17:00:00+07:00",
+  "countdownTargetDate": "2026-11-28T14:30:00+07:00",
   "groomBank": {
     "bankName": "MB Bank (Ngân hàng Quân Đội)",
     "accountNumber": "130420091011",
@@ -5762,7 +5994,7 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
       const cHeading = document.getElementById('ceremony-heading');
 
-      if (cHeading) cHeading.textContent = `TIỆC MỪNG ${WEDDING_CONFIG.eventType || 'LỄ THÀNH HÔN'}`;
+      if (cHeading) cHeading.textContent = `${WEDDING_CONFIG.eventType || 'LỄ THÀNH HÔN'} - NHÀ TRAI`;
 
       
 
@@ -5878,9 +6110,19 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
         }
 
-        cTimeText.textContent = `VÀO LÚC ${WEDDING_CONFIG.weddingTime || '17:00'} ${weekdayName}`;
+        const cTime = WEDDING_CONFIG.ceremonyTime || '14:30';
+        const fTime = WEDDING_CONFIG.weddingTime || '17:00';
+        cTimeText.textContent = `LỄ: ${cTime} • ĂN TIỆC: ${fTime} • ${weekdayName}`;
 
       }
+
+      const tCeremonyTime = document.getElementById('timeline-ceremony-time');
+      if (tCeremonyTime) tCeremonyTime.textContent = WEDDING_CONFIG.ceremonyTime || '14:30';
+      const tFeastTime = document.getElementById('timeline-feast-time');
+      if (tFeastTime) tFeastTime.textContent = WEDDING_CONFIG.weddingTime || '17:00';
+
+      const vCeremonyTime = document.getElementById('venue-ceremony-time');
+      if (vCeremonyTime) vCeremonyTime.textContent = WEDDING_CONFIG.ceremonyTime || '14:30';
 
 
 
@@ -5953,6 +6195,8 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
       document.getElementById('venue-lunar').textContent = `(Tức ${WEDDING_CONFIG.weddingLunarDate})`;
 
       document.getElementById('venue-location').textContent = WEDDING_CONFIG.weddingLocation;
+      const vLocMini = document.getElementById('venue-location-mini');
+      if (vLocMini) vLocMini.textContent = WEDDING_CONFIG.weddingLocation;
 
       document.getElementById('venue-details').textContent = WEDDING_CONFIG.weddingAddressDetails;
 
@@ -6334,13 +6578,13 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
       const title = encodeURIComponent(`Lễ Thành Hôn: ${WEDDING_CONFIG.groomName} & ${WEDDING_CONFIG.brideName}`);
 
-      const details = encodeURIComponent(`Trân trọng kính mời quý khách tham dự lễ cưới của Hoàng Đăng & Thảo Nguyên tại ${WEDDING_CONFIG.weddingLocation}`);
+      const details = encodeURIComponent(`Trân trọng kính mời quý khách tham dự lễ Thành Hôn của Hoàng Đăng & Thảo Nguyên:\n- 14:30: Tham dự lễ thành hôn tại tư gia nhà trai (Khối Phúc Lợi, Vinh Lộc, Nghệ An)\n- 17:00: Mời dùng bữa tiệc mừng thân mật tại ${WEDDING_CONFIG.weddingLocation}`);
 
       const location = encodeURIComponent(WEDDING_CONFIG.weddingLocation);
 
-      let calStart = "20261031T100000Z";
+      let calStart = "20261128T073000Z"; // 14:30 VN = 07:30 UTC
 
-      let calEnd = "20261031T140000Z";
+      let calEnd = "20261128T140000Z";   // 21:00 VN = 14:00 UTC
 
       if (WEDDING_CONFIG.countdownTargetDate) {
 
