@@ -5245,77 +5245,82 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
     <section class="physics-card card-gift" id="card-gift">
 
-      <h2 class="card-title">
+      <!-- Khối Mừng Cưới & QR Ngân Hàng (Có thể bật/ẩn linh hoạt) -->
+      <div id="gift-bank-section">
 
-        <i class="fa-solid fa-gift"></i>
+        <h2 class="card-title">
 
-        Hộp Mừng Cưới & Chúc Phúc
+          <i class="fa-solid fa-gift"></i>
 
-      </h2>
+          Hộp Mừng Cưới
 
-      <p class="card-desc">Sự hiện diện và lời chúc phúc của quý khách là món quà quý giá nhất dành cho chúng tôi</p>
+        </h2>
 
-
-
-      <!-- Tabs Chú Rể / Cô Dâu -->
-
-      <div class="gift-tabs">
-
-        <button class="gift-tab-btn active" data-target="groom">Mừng Chú Rể (Hoàng Đăng)</button>
-
-        <button class="gift-tab-btn" data-target="bride">Mừng Cô Dâu (Thảo Nguyên)</button>
-
-      </div>
+        <p class="card-desc">Sự hiện diện của quý khách là món quà quý giá nhất dành cho chúng tôi</p>
 
 
 
-      <!-- Nội dung tài khoản mừng cưới -->
+        <!-- Tabs Chú Rể / Cô Dâu -->
 
-      <div class="gift-content-box">
+        <div class="gift-tabs">
 
-        <img id="bank-qr-img" class="qr-img" src="" alt="Mã QR Chuyển Khoản Mừng Cưới" title="Chạm để mở popup phóng to" style="cursor: pointer;">
+          <button class="gift-tab-btn active" data-target="groom">Mừng Chú Rể (Hoàng Đăng)</button>
 
-        
-
-        <div class="bank-info-row">
-
-          <span class="bank-info-label">Ngân hàng: </span>
-
-          <span class="bank-info-value" id="bank-name">MB Bank</span>
-
-        </div>
-
-        <div class="bank-info-row">
-
-          <span class="bank-info-label">Số tài khoản: </span>
-
-          <span class="bank-info-value" id="bank-acc-num">130420091011</span>
-
-          <button class="btn-copy" id="btn-copy-acc">
-
-            <i class="fa-regular fa-copy"></i> Sao chép
-
-          </button>
-
-        </div>
-
-        <div class="bank-info-row">
-
-          <span class="bank-info-label">Chủ tài khoản: </span>
-
-          <span class="bank-info-value" id="bank-acc-holder">HOANG NGUYEN HAI DANG</span>
+          <button class="gift-tab-btn" data-target="bride">Mừng Cô Dâu (Thảo Nguyên)</button>
 
         </div>
 
 
 
-        <div style="text-align: center; margin-top: 14px;">
+        <!-- Nội dung tài khoản mừng cưới -->
 
-          <button id="btn-open-qr-popup" class="btn-action btn-action-primary" style="font-size: 13px; padding: 8px 22px;">
+        <div class="gift-content-box">
 
-            <i class="fa-solid fa-qrcode"></i> Mở Popup Mã QR Phóng To
+          <img id="bank-qr-img" class="qr-img" src="" alt="Mã QR Chuyển Khoản Mừng Cưới" title="Chạm để mở popup phóng to" style="cursor: pointer;">
 
-          </button>
+          
+
+          <div class="bank-info-row">
+
+            <span class="bank-info-label">Ngân hàng: </span>
+
+            <span class="bank-info-value" id="bank-name">MB Bank</span>
+
+          </div>
+
+          <div class="bank-info-row">
+
+            <span class="bank-info-label">Số tài khoản: </span>
+
+            <span class="bank-info-value" id="bank-acc-num">130420091011</span>
+
+            <button class="btn-copy" id="btn-copy-acc">
+
+              <i class="fa-regular fa-copy"></i> Sao chép
+
+            </button>
+
+          </div>
+
+          <div class="bank-info-row">
+
+            <span class="bank-info-label">Chủ tài khoản: </span>
+
+            <span class="bank-info-value" id="bank-acc-holder">HOANG NGUYEN HAI DANG</span>
+
+          </div>
+
+
+
+          <div style="text-align: center; margin-top: 14px;">
+
+            <button id="btn-open-qr-popup" class="btn-action btn-action-primary" style="font-size: 13px; padding: 8px 22px;">
+
+              <i class="fa-solid fa-qrcode"></i> Mở Popup Mã QR Phóng To
+
+            </button>
+
+          </div>
 
         </div>
 
@@ -5325,7 +5330,7 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
       <!-- Form gửi lời chúc -->
 
-      <div class="wishes-form">
+      <div class="wishes-form" id="wishes-section">
 
         <h3 style="font-family: var(--font-title); font-size: 20px; text-align: center; margin-bottom: 16px;">
 
@@ -5620,6 +5625,7 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
   "theme": "classic-ruby",
   "eventType": "LỄ THÀNH HÔN",
   "envelopeEnabled": true,
+  "giftEnabled": true,
   "groomParents": {
     "title": "Nhà Trai",
     "father": "Ông: Hoàng Ngọc Tâm",
@@ -5976,12 +5982,21 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
           envOverlay.classList.add('opened');
 
-        } else {
-
-          envOverlay.classList.remove('opened');
-
         }
 
+      }
+
+      // Cập nhật Ẩn / Hiện Khối Mừng Cưới & Mã QR Ngân Hàng
+      const giftBankSec = document.getElementById('gift-bank-section');
+      const btnVenueQr = document.getElementById('btn-open-qr-popup-venue');
+      const cardGiftEl = document.getElementById('card-gift');
+      const isGiftActive = WEDDING_CONFIG.giftEnabled !== false;
+
+      if (giftBankSec) {
+        giftBankSec.style.display = isGiftActive ? '' : 'none';
+      }
+      if (btnVenueQr) {
+        btnVenueQr.style.display = isGiftActive ? '' : 'none';
       }
 
 
@@ -6997,7 +7012,9 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!</p>
 
       // 1. Lấy danh sách các phần tử cần biến thành vật thể vật lý
 
-      const targetEls = Array.from(document.querySelectorAll('.physics-card, .gallery-item'));
+      const targetEls = Array.from(document.querySelectorAll('.physics-card, .gallery-item')).filter(el => {
+        return el.style.display !== 'none' && window.getComputedStyle(el).display !== 'none';
+      });
 
       
 
